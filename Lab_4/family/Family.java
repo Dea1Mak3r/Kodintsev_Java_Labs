@@ -1,48 +1,4 @@
-package Lab_4;
-
-class Parent {
-    private String name;
-
-    public Parent(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void display() {
-        System.out.println("Это родитель");
-    }
-}
-
-class Child extends Parent {
-    
-    public Child(String name) {
-        super(name);
-    }
-
-    @Override
-    public void display() {
-        System.out.println("Это ребенок");
-    }
-}
-
-class GrandChild extends Child {
-
-    public GrandChild(String name) {
-        super(name);
-    }
-
-    @Override
-    public void display() {
-        System.out.println("Это внук");
-    }
-}
+package Lab_4.family;
 
 class Family {
     private Parent[] members;
@@ -98,27 +54,5 @@ class Family {
         for (int i = 0; i < size; i++) {
             members[i].display();
         }
-    }
-}
-
-public class Task1 {
-    public static void main(String[] args) {
-        Family family = new Family(5);
-
-        family.addMember(new Parent("Parent1"));
-        family.addMember(new Child("Child1"));
-        family.addMember(new GrandChild("GrandChild1"));
-        
-        System.out.println("Вывод информации о членах семьи:");
-        family.displayAll();
-
-        System.out.println("\nПодсчет количества объектов:");
-        family.countMembers();
-
-        System.out.println("\nУдаление последнего элемента:");
-        family.popMember();
-        
-        System.out.println("\nПодсчет после удаления:");
-        family.countMembers();
     }
 }

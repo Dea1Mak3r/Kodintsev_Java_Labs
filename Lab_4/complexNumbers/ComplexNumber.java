@@ -1,4 +1,4 @@
-package Lab_4;
+package Lab_4.complexNumbers;
 
 public class ComplexNumber {
     private double real;
